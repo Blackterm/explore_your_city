@@ -25,7 +25,7 @@ class _AppBarWievState extends ViewState<AppBarWiev, AppBarController> {
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Container(
       padding: EdgeInsets.only(top: padding.top, left: 20, right: 20),
-      color: kBlue,
+      color: cBlue,
       width: size.width,
       height: size.height / 7,
       child: Row(
@@ -40,13 +40,13 @@ class _AppBarWievState extends ViewState<AppBarWiev, AppBarController> {
                       height: 40,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: kWhite,
+                        color: cWhite,
                       ),
                       child: Center(child: Text(controller.user.imageUrl)),
                     );
                   })
                 : Icon(Icons.keyboard_backspace,
-                    size: size.height * 0.055, color: kWhite),
+                    size: size.height * 0.055, color: cWhite),
             onTap: () {
               if (!widget.isBackButtonActive) {
                 Scaffold.of(context).openDrawer();
@@ -57,14 +57,14 @@ class _AppBarWievState extends ViewState<AppBarWiev, AppBarController> {
           ),
           Text(
             EYCTexts.explore,
-            style: kLargeTitleStyle(kWhite),
+            style: kLargeTitleStyle(cWhite),
           ),
           ControlledWidgetBuilder<AppBarController>(
               builder: (context, controller) {
             return InkWell(
               child: Icon(
                 Icons.add_circle_outline_rounded,
-                color: kWhite,
+                color: cWhite,
                 size: size.height * 0.05,
               ),
               onTap: () {

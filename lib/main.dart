@@ -11,10 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       title: 'Explore Your City',
       theme: ThemeData(
-        
         brightness: Brightness.light,
       ),
       debugShowCheckedModeBanner: false,

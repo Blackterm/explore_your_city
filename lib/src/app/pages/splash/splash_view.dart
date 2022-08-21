@@ -1,3 +1,4 @@
+import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/pages/splash/splash_controller.dart';
 import 'package:explore_your_city/src/app/text.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class _SplashViewState extends ViewState<SplashView, SplashController> {
                     Container(
                       height: size.height - 100,
                       child: Center(
-                        child: Lottie.asset('assets/animations/loading.json'),
+                        child: Lottie.asset(aLoading),
                       ),
                     ),
                     SizedBox(height: 30),

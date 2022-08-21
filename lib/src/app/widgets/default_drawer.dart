@@ -10,7 +10,8 @@ class NavigationDrawer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Drawer(
-      backgroundColor: kBlue,
+      
+      backgroundColor: cBlue,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -26,7 +27,7 @@ class NavigationDrawer extends StatelessWidget {
   Widget buildHeader(
           BuildContext context, ent.User user, Size size, EdgeInsets padding) =>
       Container(
-        color: kBlue,
+        color: cBlue,
         padding: EdgeInsets.only(
           top: padding.top,
           left: 10,
@@ -41,7 +42,7 @@ class NavigationDrawer extends StatelessWidget {
                 height: size.height * 0.2,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: kWhite,
+                  color: cWhite,
                 ),
                 child: Center(child: Text(user.imageUrl)),
               ),
@@ -51,7 +52,7 @@ class NavigationDrawer extends StatelessWidget {
             ),
             Text(
               user.firstName,
-              style: kLargeTitleStyle(kWhite),
+              style: kLargeTitleStyle(cWhite),
             ),
           ],
         ),
