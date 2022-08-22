@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/pages/splash/splash_controller.dart';
 import 'package:explore_your_city/src/app/text.dart';
@@ -25,24 +26,29 @@ class _SplashViewState extends ViewState<SplashView, SplashController> {
           Expanded(
             child: Column(
               children: [
-                Column(
-                  children: [
-                    Container(
-                      height: size.height - 100,
-                      child: Center(
-                        child: Lottie.asset(aLoading),
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Text(
+                SizedBox(height: size.height * 0.2),
+                Container(
+                  height: size.height * 0.4,
+                  child: Center(
+                    child: Lottie.asset(aLoading),
+                  ),
+                ),
+                SizedBox(height: 30),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
                       EYCTexts.exploreYourCity,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 23,
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
+                      speed: const Duration(milliseconds: 100),
                     ),
                   ],
+                  totalRepeatCount: 10,
+                  pause: const Duration(milliseconds: 5),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
                 ),
               ],
             ),
