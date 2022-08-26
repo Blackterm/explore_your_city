@@ -21,8 +21,7 @@ class OnboardingView extends View {
 late bool isLastPage = false;
 
 class _OnboardingViewState
-    extends ViewState<OnboardingView, OnboardingController>
-    with TickerProviderStateMixin {
+    extends ViewState<OnboardingView, OnboardingController> {
   _OnboardingViewState(OnboardingController controller) : super(controller);
 
   @override
@@ -86,13 +85,40 @@ class _OnBoardingContainer extends StatelessWidget {
             fit: BoxFit.fill,
           ),
           Positioned(
-            top: size.height / 2,
-            right: padding.right + 20,
-            child: Text(
-              "Deneme1",
-              style: kLargeTitleStyle(cBlue),
-            ),
-          ),
+              top: size.height / 2,
+              left: padding.left + 20,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const SizedBox(width: 20.0, height: 100.0),
+                  const Text(
+                    'Be',
+                    style: TextStyle(fontSize: 43.0),
+                  ),
+                  const SizedBox(width: 20.0, height: 100.0),
+                  DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Horizon',
+                    ),
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        RotateAnimatedText('AWESOME'),
+                        RotateAnimatedText('OPTIMISTIC'),
+                        RotateAnimatedText('DIFFERENT'),
+                      ],
+                      onTap: () {
+                        print("Tap Event");
+                      },
+                    ),
+                  ),
+                ],
+              )
+              // Text(
+              //   "Deneme1",
+              //   style: kLargeTitleStyle(cBlue),
+              // ),
+              ),
           Positioned(
             right: padding.right + 20,
             bottom: padding.bottom + 20,

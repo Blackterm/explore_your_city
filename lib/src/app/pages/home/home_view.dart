@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/pages/app_bar/app_bar_view.dart';
 import 'package:explore_your_city/src/app/pages/home/home_controller.dart';
+import 'package:explore_your_city/src/app/pages/natural_place/natural_place_view.dart';
 import 'package:explore_your_city/src/app/pages/splash/splash_view.dart';
 import 'package:explore_your_city/src/domain/entities/user.dart' as ent;
 import 'package:flutter/cupertino.dart';
@@ -76,18 +77,17 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                     spacing: 80,
                     runSpacing: 20,
                     children: [
-                      _DefaultCityInfoContainer("Yemekler", () {
+                      _DefaultCityInfoContainer("Yemekler", () {}),
+                      _DefaultCityInfoContainer("Doğal Yerler", () {
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
-                            builder: (context) => SplashView(),
+                            builder: (context) => NaturalPlaceView(),
                           ),
                         );
                       }),
-                      _DefaultCityInfoContainer("Doğal Yerler", () {}),
                       _DefaultCityInfoContainer("Tarihi Yerler", () {}),
                       _DefaultCityInfoContainer("Tarihi", () {}),
-                      
                     ],
                   )
                 ],

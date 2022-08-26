@@ -1,5 +1,7 @@
 import 'package:explore_your_city/src/app/constants/constants.dart';
+import 'package:explore_your_city/src/app/pages/profile/profile_view.dart';
 import 'package:explore_your_city/src/domain/entities/user.dart' as ent;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -10,7 +12,6 @@ class NavigationDrawer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Drawer(
-      
       backgroundColor: cBlue,
       child: SingleChildScrollView(
         child: Column(
@@ -37,14 +38,23 @@ class NavigationDrawer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-              child: Container(
-                width: size.width * 0.3,
-                height: size.height * 0.2,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: cWhite,
+              child: InkWell(
+                child: Container(
+                  width: size.width * 0.3,
+                  height: size.height * 0.2,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: cWhite,
+                  ),
+                  child: Center(child: Text(user.imageUrl)),
                 ),
-                child: Center(child: Text(user.imageUrl)),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => ProfileView()),
+                  );
+                  Scaffold.of(context).closeDrawer();
+                },
               ),
             ),
             SizedBox(

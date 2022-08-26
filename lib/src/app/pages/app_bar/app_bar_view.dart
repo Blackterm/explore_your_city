@@ -56,7 +56,7 @@ class _AppBarWievState extends ViewState<AppBarWiev, AppBarController> {
             },
           ),
           Text(
-            EYCTexts.explore,
+            "KAYSERİ",
             style: kLargeTitleStyle(cWhite),
           ),
           ControlledWidgetBuilder<AppBarController>(
