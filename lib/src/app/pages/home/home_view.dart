@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/pages/app_bar/app_bar_view.dart';
+import 'package:explore_your_city/src/app/pages/historic_sites/historic_sites_view.dart';
 import 'package:explore_your_city/src/app/pages/home/home_controller.dart';
 import 'package:explore_your_city/src/app/pages/natural_place/natural_place_view.dart';
 import 'package:explore_your_city/src/app/pages/splash/splash_view.dart';
@@ -86,7 +87,14 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                           ),
                         );
                       }),
-                      _DefaultCityInfoContainer("Tarihi Yerler", () {}),
+                      _DefaultCityInfoContainer("Tarihi Yerler", () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => HistoricSitesView(),
+                          ),
+                        );
+                      }),
                       _DefaultCityInfoContainer("Tarihi", () {}),
                     ],
                   )
