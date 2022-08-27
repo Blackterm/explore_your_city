@@ -1,4 +1,3 @@
-import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/pages/app_bar/app_bar_view.dart';
 import 'package:explore_your_city/src/app/pages/natural_place/natural_place_controller.dart';
 import 'package:flutter/material.dart';
@@ -29,12 +28,27 @@ class _NaturalPlaceViewState
       body: Column(
         children: [
           AppBarWiev(isBackButtonActive: true),
-          DefaultDetailContainer(
-            imageUrl: "https://www.kayserinethaber.com/d/r/333.jpg",
-            placeName: "Kapuzbaşı Şelaleleri",
-            numberOfComments: "35",
-            numberOfVisitors: "15",
-          ),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: AlwaysScrollableScrollPhysics(
+                  parent: BouncingScrollPhysics()),
+              child: Column(
+                children: [
+                  for (int i = 0; i < 10; i++)
+                    Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: DefaultDetailContainer(
+                        imageUrl: "https://www.kayserinethaber.com/d/r/333.jpg",
+                        placeName: "Kapuzbaşı Şelaleleri",
+                        numberOfComments: (i + 1).toString(),
+                        numberOfVisitors: "15",
+                        pageName: () {},
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

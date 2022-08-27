@@ -2,6 +2,7 @@ import 'package:explore_your_city/src/app/constants/constants.dart';
 import 'package:explore_your_city/src/app/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+import '../../../data/repositories/data_user_repository.dart';
 import 'app_bar_controller.dart';
 
 class AppBarWiev extends View {
@@ -41,8 +42,12 @@ class _AppBarWievState extends ViewState<AppBarWiev, AppBarController> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: cWhite,
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: NetworkImage(
+                              DataUserRepository().user.imageUrl,
+                            )),
                       ),
-                      child: Center(child: Text(controller.user.imageUrl)),
                     );
                   })
                 : Icon(Icons.keyboard_backspace,

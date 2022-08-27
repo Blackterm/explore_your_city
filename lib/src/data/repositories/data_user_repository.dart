@@ -5,7 +5,8 @@ class DataUserRepository {
       Id: "1",
       firstName: "Murat Can",
       lastName: "ERAVŞAR",
-      imageUrl: "imageUrl",
+      imageUrl:
+          "https://haruncan.com/wp-content/uploads/2014/09/Mordecai_y_Rigby_diciendo_Ohhhhh.jpg",
       dateOfBirth: "29/04/1997",
       firstRecord: "20/08/2022");
 }

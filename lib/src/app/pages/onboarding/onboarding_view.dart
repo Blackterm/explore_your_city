@@ -134,6 +134,7 @@ class _OnBoardingContainer extends StatelessWidget {
                             builder: (context) =>
                                 HomeView(DataUserRepository().user)),
                       );
+                controller.sharedPreferences!.setBool("firstLogin", false);
               },
               child: Icon(Icons.arrow_forward_ios_rounded),
             ),

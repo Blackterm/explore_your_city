@@ -48,6 +48,7 @@ dependencies:
   another_flushbar: ^1.10.29
   easy_localization: ^3.0.1
   animated_text_kit: ^4.2.2
+  maps_launcher: ^2.0.1
 
 dev_dependencies:
   flutter_test:

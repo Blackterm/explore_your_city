@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 import '../../widgets/default_drawer.dart';
+import '../traditional_dishes/traditional_dishes_view.dart';
 
 class HomeView extends View {
   ent.User _user;
@@ -23,7 +24,7 @@ class HomeView extends View {
 
 class _HomeViewState extends ViewState<HomeView, HomeController> {
   _HomeViewState(HomeController controller) : super(controller);
-
+// WavyAnimatedText(text)
   @override
   // TODO: implement view
   Widget get view {
@@ -78,7 +79,14 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                     spacing: 80,
                     runSpacing: 20,
                     children: [
-                      _DefaultCityInfoContainer("Yemekler", () {}),
+                      _DefaultCityInfoContainer("Yemekler", () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => TraditionalDishesView(),
+                          ),
+                        );
+                      }),
                       _DefaultCityInfoContainer("Doğal Yerler", () {
                         Navigator.push(
                           context,

@@ -45,8 +45,12 @@ class NavigationDrawer extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: cWhite,
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: NetworkImage(
+                          user.imageUrl,
+                        )),
                   ),
-                  child: Center(child: Text(user.imageUrl)),
                 ),
                 onTap: () {
                   Navigator.push(
